@@ -8,4 +8,5 @@ func RegisterEvents(server *gin.Engine) {
 	server.POST("/events", createEvent)       // --- POST
 	server.PUT("/events/:id", updateEvent)    // --- PUT(BY ID)
 	server.DELETE("/events/:id", deleteEvent) // --- DELETE(BY ID)
+	server.POST("/signup")
 }
