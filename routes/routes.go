@@ -2,6 +2,7 @@ package routes
 
 import "github.com/gin-gonic/gin"
 
+// ========== EVENT ROUTES REGISTERER ========== \\
 func RegisterEvents(server *gin.Engine) {
 	server.GET("/events", getEvents)          // --- GET
 	server.GET("/events/:id", getEvent)       // --- GET(BY ID)
@@ -10,6 +11,8 @@ func RegisterEvents(server *gin.Engine) {
 	server.DELETE("/events/:id", deleteEvent) // --- DELETE(BY ID)
 }
 
+// ========== USER ROUTES REGISTERER ========== \\
 func RegisterUsers(server *gin.Engine) {
-	server.POST("/signup") // --- SIGNS UP USERS
+	server.POST("/signup", signUp) // --- SIGNS UP USERS
+	server.POST("/login")          // --- LOGS IN USERS
 }
