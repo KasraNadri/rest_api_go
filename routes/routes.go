@@ -14,5 +14,5 @@ func RegisterEvents(server *gin.Engine) {
 // ========== USER ROUTES REGISTERER ========== \\
 func RegisterUsers(server *gin.Engine) {
 	server.POST("/signup", signUp) // --- SIGNS UP USERS
-	server.POST("/login")          // --- LOGS IN USERS
+	server.POST("/login", logIn)   // --- LOGS IN USERS
 }
