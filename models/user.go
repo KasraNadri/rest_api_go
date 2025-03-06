@@ -48,12 +48,12 @@ func (u User) Save() error {
 }
 
 func (u User) ValidateCredentials() error {
-	query := "SELECT email, password FROM users WHERE email = ?"
+	query := "SELECT id, email, password FROM users WHERE email = ?"
 
 	row := db.DB.QueryRow(query, u.Email)
 
 	var retrievedRow User
-	err := row.Scan(&retrievedRow.Email, &retrievedRow.Password)
+	err := row.Scan(&retrievedRow.ID, &retrievedRow.Email, &retrievedRow.Password)
 
 	if err != nil {
 		log.Println("retrieving the record with the email failed", err)
